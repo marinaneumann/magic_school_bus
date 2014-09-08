@@ -6,4 +6,7 @@ describe Stop do
 
   it { should validate_presence_of :line_id }
   it { should validate_presence_of :station_id }
+
+  it { should validate_uniqueness_of :line_id }
+  it { should validate_uniqueness_of :station_id }
 end

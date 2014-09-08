@@ -1,0 +1,14 @@
+<% content_for(:title, "Stops | Magic School Bus") %>
+
+<h1> Stops</h1>
+<ul>
+  <% @stops.each do |stop| %>
+    <li><%= stop.station.name %> -
+    <%= stop.line.name %></li>
+  <% end %>
+</ul>
+
+
+<p><%= link_to "Create a stop", new_stop_path, :class => "btn btn-info"%></p>
+
+<p><%= link_to "Return to home page", root_path, :class => "btn btn-primary"%></p>
