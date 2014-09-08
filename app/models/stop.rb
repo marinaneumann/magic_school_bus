@@ -8,5 +8,9 @@ class Stop < ActiveRecord::Base
   belongs_to :station
 
 
-  default_scope { order('line_id') }
+  # default_scope { order('line_id') }
+
+  def self.sort_by_line
+    all.sort_by {|stop| stop.line.name}
+  end
 end

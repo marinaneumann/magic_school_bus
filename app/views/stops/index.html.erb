@@ -1,8 +1,12 @@
 <% content_for(:title, "Stops | Magic School Bus") %>
 
 <h1> Stops</h1>
+
+<img src="http://3.bp.blogspot.com/-sNQam881Lc8/UXn-zEZvS5I/AAAAAAAAABM/PeawcW-L2qw/s1600/frizzle.jpg" alt="Ms. Frizzle">
+<br></br>
+<br></br>
 <ul>
-  <% @stops.each do |stop| %>
+  <% @stops.sort_by_line.each do |stop| %>
     <li><%= stop.station.name %> -
     <%= stop.line.name %></li>
   <% end %>
