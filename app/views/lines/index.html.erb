@@ -1,0 +1,19 @@
+<% content_for(:title, "Lines | Magic School Bus") %>
+
+<h1>Lines</h1>
+
+<ul>
+  <% @lines.each do |line| %>
+    <li><%= link_to line.name, line_path(line) %> |
+        <%= link_to "Edit", edit_line_path(line)%> |
+        <%= link_to "Delete", line_path(line),
+            :data => {:confirm => "Are you sure",
+                      :method => "delete"} %>
+    </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Create a line", new_line_path, :class => 'btn btn-info' %></p>
+
+<p><%= link_to "Return to home page", root_path, :class => "btn btn-primary"%></p>
+
