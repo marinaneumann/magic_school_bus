@@ -1,3 +1,14 @@
 <% content_for(:title, "Station's Lines") %>
 
-<p></p>
+<h1><%= @station.name %>'s Lines</h1>
+
+<ul>
+  <% @station.stops.each do |stop| %>
+    <li><%= link_to stop.line.name, line_path(stop.line_id) %></li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Station Menu", stations_path, :class => 'btn btn-success'%></p>
+
+
+
